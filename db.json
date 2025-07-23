@@ -1,0 +1,76 @@
+{
+  "doctors": [
+
+    {
+      "id": 1,
+      "name": "Dr. Aisha Patel",
+      "specialty": "Cardiologist",
+      "image": "https://placehold.co/128x128/E0E7FF/4338CA?text=Dr.+A",
+      "bio": "Dr. Patel is a board-certified cardiologist with over 15 years of experience in treating heart conditions. She is a fellow of the American College of Cardiology."
+    },
+    {
+      "id": 2,
+      "name": "Dr. Ben Carter",
+      "specialty": "Dermatologist",
+      "image": "https://placehold.co/128x128/E0E7FF/4338CA?text=Dr.+B",
+      "bio": "Dr. Carter specializes in both medical and cosmetic dermatology. He is known for his patient-centric approach and innovative treatment methods."
+    },
+    {
+      "id": 3,
+      "name": "Dr. Chloe Davis",
+      "specialty": "Pediatrician",
+      "image": "https://placehold.co/128x128/E0E7FF/4338CA?text=Dr.+C",
+      "bio": "With a passion for children's health, Dr. Davis provides comprehensive care for infants, children, and adolescents. She has a friendly and reassuring demeanor."
+    },
+    {
+      "id": 4,
+      "name": "Dr. David Rodriguez",
+      "specialty": "Orthopedic Surgeon",
+      "image": "https://placehold.co/128x128/E0E7FF/4338CA?text=Dr.+D",
+      "bio": "Dr. Rodriguez is a leading expert in sports medicine and joint replacement surgery. He is committed to helping patients regain mobility and live pain-free."
+    },
+  {
+    "id": 5,
+    "name": "Dr. Emily Nguyen",
+    "specialty": "Neurologist",
+    "image": "https://placehold.co/128x128/E0E7FF/4338CA?text=Dr.+E",
+    "bio": "Dr. Nguyen specializes in treating neurological disorders such as migraines, epilepsy, and Parkinson's disease. She is known for her empathetic care and precision."
+  },
+  {
+    "id": 6,
+    "name": "Dr. Faisal Khan",
+    "specialty": "General Physician",
+    "image": "https://placehold.co/128x128/E0E7FF/4338CA?text=Dr.+F",
+    "bio": "With over a decade of experience in internal medicine, Dr. Khan provides preventive care and treatment for chronic illnesses with a holistic approach."
+  },
+  {
+    "id": 7,
+    "name": "Dr. Grace Lee",
+    "specialty": "Gynecologist",
+    "image": "https://placehold.co/128x128/E0E7FF/4338CA?text=Dr.+G",
+    "bio": "Dr. Lee is a trusted gynecologist offering a range of women's health services including prenatal care, fertility counseling, and menopause management."
+  },
+  {
+    "id": 8,
+    "name": "Dr. Harish Mehta",
+    "specialty": "Oncologist",
+    "image": "https://placehold.co/128x128/E0E7FF/4338CA?text=Dr.+H",
+    "bio": "Dr. Mehta is a renowned oncologist with expertise in chemotherapy and immunotherapy. He advocates for early cancer detection and personalized treatment plans."
+  },
+  {
+    "id": 9,
+    "name": "Dr. Isabella Russo",
+    "specialty": "ENT Specialist",
+    "image": "https://placehold.co/128x128/E0E7FF/4338CA?text=Dr.+I",
+    "bio": "Dr. Russo treats ear, nose, and throat conditions with both medical and surgical solutions. She is especially skilled in pediatric ENT care."
+  },
+  {
+    "id": 10,
+    "name": "Dr. Jason Wang",
+    "specialty": "Psychiatrist",
+    "image": "https://placehold.co/128x128/E0E7FF/4338CA?text=Dr.+J",
+    "bio": "Dr. Wang provides compassionate mental health support for conditions like anxiety, depression, and PTSD. He incorporates therapy and medication management."
+  }
+]
+
+}
