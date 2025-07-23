@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { 
-    ChevronLeft, Calendar, Clock, Stethoscope, CheckCircle, List, LogOut, ArrowRight,
+    ChevronLeft, Calendar, Clock, Stethoscope, CheckCircle, List, LogOut,
     HeartPulse, Sun, Baby, Bone, Brain, ShieldCheck 
 } from 'lucide-react';
 import type { Doctor, Booking, User } from '../pages/index';
@@ -38,7 +38,17 @@ const getSpecialtyIcon = (specialty: string) => {
 
 // --- SUB-COMPONENTS ---
 
-const AppHeader = ({ title, user, bookingCount, onViewAppointments, onLogout, onNewBooking, page }: any) => (
+interface AppHeaderProps {
+    title: string;
+    user: User;
+    bookingCount?: number;
+    page: 'select-doctor' | 'my-appointments';
+    onViewAppointments?: () => void;
+    onNewBooking?: () => void;
+    onLogout: () => void;
+}
+
+const AppHeader = ({ title, user, bookingCount, onViewAppointments, onLogout, onNewBooking, page }: AppHeaderProps) => (
     <header className="bg-white shadow-sm p-4 sticky top-0 z-10">
         <div className="max-w-5xl mx-auto flex justify-between items-center">
             <h1 className="text-2xl font-bold text-slate-800">{title}</h1>
@@ -48,7 +58,7 @@ const AppHeader = ({ title, user, bookingCount, onViewAppointments, onLogout, on
                         <Stethoscope className="h-5 w-5"/><span>Book Appointment</span>
                     </button>
                 ) : (
-                    bookingCount > 0 && (
+                    bookingCount && bookingCount > 0 && (
                         <button onClick={onViewAppointments} className="flex items-center space-x-2 text-sm font-medium text-indigo-600 bg-indigo-100 hover:bg-indigo-200 px-3 py-2 rounded-full transition-colors">
                             <List className="h-5 w-5"/><span>My Appointments</span>
                         </button>
@@ -169,7 +179,7 @@ const AppointmentDetailCard = ({ booking, isLatest }: { booking: Booking, isLate
 
 // --- MAIN BOOKING FLOW COMPONENT ---
 export const BookingFlow = ({ user, doctors, onLogout }: { user: User, doctors: Doctor[], onLogout: () => void }) => {
-    const [page, setPage] = useState('select-doctor'); 
+    const [page, setPage] = useState<'select-doctor' | 'select-time' | 'my-appointments'>('select-doctor'); 
     const [selectedDoctor, setSelectedDoctor] = useState<Doctor | null>(null);
     const [confirmedBookings, setConfirmedBookings] = useState<Booking[]>([]);
     const [showConfirmation, setShowConfirmation] = useState(false);
