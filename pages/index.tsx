@@ -1,14 +1,14 @@
-// In pages/index.tsx
 import { useState } from 'react';
-import type { GetStaticProps, NextPage } from 'next';
 import { LoginPage } from '../components/LoginPage';
 import { BookingFlow } from '../components/BookingFlow';
 import Head from 'next/head';
+
+// --- TYPE DEFINITIONS ---
 export interface Doctor {
   id: number;
   name: string;
   specialty: string;
-  image: string;
+  image: string; // Kept for type consistency, but not used by new components
   bio: string;
 }
 
@@ -24,12 +24,55 @@ export interface User {
   name: string;
 }
 
-interface HomePageProps {
-  doctors: Doctor[];
-}
+// --- MOCK DATA ---
+const mockDoctors: Doctor[] = [
+    {
+        id: 1,
+        name: 'Dr. Aisha Patel',
+        specialty: 'Cardiologist',
+        image: '',
+        bio: 'Dr. Patel is a board-certified cardiologist with over 15 years of experience in treating heart conditions.'
+    },
+    {
+        id: 2,
+        name: 'Dr. Ben Carter',
+        specialty: 'Dermatologist',
+        image: '',
+        bio: 'Dr. Carter specializes in both medical and cosmetic dermatology. He is known for his patient-centric approach.'
+    },
+    {
+        id: 3,
+        name: 'Dr. Chloe Davis',
+        specialty: 'Pediatrician',
+        image: '',
+        bio: 'With a passion for children\'s health, Dr. Davis provides comprehensive care for infants, children, and adolescents.'
+    },
+    {
+        id: 4,
+        name: 'Dr. David Rodriguez',
+        specialty: 'Orthopedic Surgeon',
+        image: '',
+        bio: 'Dr. Rodriguez is a leading expert in sports medicine and joint replacement surgery.'
+    },
+    {
+        id: 5,
+        name: 'Dr. Evelyn Reed',
+        specialty: 'Neurologist',
+        image: '',
+        bio: 'Specializing in disorders of the nervous system, including stroke and epilepsy.'
+    },
+    {
+        id: 6,
+        name: 'Dr. Frank Miller',
+        specialty: 'Psychiatrist',
+        image: '',
+        bio: 'Provides mental health care for adults, focusing on therapy and medication management.'
+    }
+];
+
 
 // --- MAIN PAGE COMPONENT ---
-const HomePage: NextPage<HomePageProps> = ({ doctors }) => {
+export default function HomePage() {
   const [user, setUser] = useState<User | null>(null);
 
   const handleLogin = (userData: User) => {
@@ -53,22 +96,9 @@ const HomePage: NextPage<HomePageProps> = ({ doctors }) => {
         {!user ? (
           <LoginPage onLogin={handleLogin} />
         ) : (
-          <BookingFlow user={user} doctors={doctors} onLogout={handleLogout} />
+          <BookingFlow user={user} doctors={mockDoctors} onLogout={handleLogout} />
         )}
       </main>
     </>
   );
-};
-
-export default HomePage;
-
-export const getStaticProps: GetStaticProps = async () => {
-
-  const res = await fetch('http://localhost:4000/doctors');
-  const doctors = await res.json();
-  return {
-    props: {
-      doctors,
-    },
-  };
-};
+}
